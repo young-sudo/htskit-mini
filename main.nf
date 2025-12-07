@@ -7,6 +7,22 @@ params.output_mapping = params.output_mapping ?: "results/output.txt"
 params.output_contigs = params.output_contigs ?: "results/output_contigs.fasta"
 
 
+if ( params.help ) {
+    log.info """
+    Usage:
+      nextflow run main.nf --mode mapper --input_reads reads.fasta --input_reference ref.fasta
+
+    Parameters:
+      --mode              mapper|assembler
+      --input_reads       FASTA
+      --input_reference   FASTA
+      --output_mapping    TXT
+      --output_contigs    FASTA
+    """
+    exit 0
+}
+
+
 // validate mode
 if (!params.mode) {
     error "Missing required parameter: --mode. Must be 'mapper' or 'assembler'."
@@ -61,20 +77,4 @@ workflow {
     } else {
         RUN_ASSEMBLER()
     }
-}
-
-
-if ( params.help ) {
-    log.info """
-    Usage:
-      nextflow run main.nf --mode mapper --input_reads reads.fasta --input_reference ref.fasta
-
-    Parameters:
-      --mode              mapper|assembler
-      --input_reads       FASTA
-      --input_reference   FASTA
-      --output_mapping    TXT
-      --output_contigs    FASTA
-    """
-    exit 0
 }
