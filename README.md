@@ -10,6 +10,7 @@ Younginn Park
 ![Nextflow](https://img.shields.io/badge/Nextflow-23CC85?style=for-the-badge&logo=nextflow&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
+![Slurm](https://img.shields.io/badge/Slurm-42A5F5?style=for-the-badge&logo=serverfault&logoColor=white)
 
 ## Usage
 
@@ -74,6 +75,9 @@ nextflow run main.nf -profile singularity
 
 # Run locally without containers
 nextflow run main.nf -profile standard
+
+# Run with Slurm on HPC
+nextflow run main.nf -profile slurm
 ```
 
 #### Select workflow parameters (optional)

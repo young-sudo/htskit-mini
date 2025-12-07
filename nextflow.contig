@@ -20,6 +20,12 @@ profiles {
         process.container = "docker://ghcr.io/young-sudo/htskit-mini:latest"
     }
 
+    slurm {
+        executor = "slurm"
+        conda.enabled = true
+        conda = "env.yml"
+    }
+
     standard {
         executor = "local"
     }
