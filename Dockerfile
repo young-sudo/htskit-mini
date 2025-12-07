@@ -1,0 +1,10 @@
+FROM mambaorg/micromamba:latest
+# https://github.com/mamba-org/mamba
+
+# Create environment
+COPY env.yml /tmp/env.yml
+
+RUN micromamba create -f /tmp/env.yml -y && \
+    micromamba clean --all --yes
+
+SHELL ["micromamba", "run", "-n", "htskit-mini", "/bin/bash", "-c"]

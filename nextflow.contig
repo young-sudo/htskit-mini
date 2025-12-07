@@ -1,0 +1,26 @@
+
+process {
+    cpus = 4
+    memory = '8 GB'
+}
+
+profiles {
+    conda {
+        conda.enabled = true
+        conda = "env.yml"
+    }
+
+    docker {
+        docker.enabled = true
+        process.container = "ghcr.io/young-sudo/htskit-mini:latest"
+    }
+
+    singularity {
+        singularity.enabled = true
+        process.container = "docker://ghcr.io/young-sudo/htskit-mini:latest"
+    }
+
+    standard {
+        executor = "local"
+    }
+}

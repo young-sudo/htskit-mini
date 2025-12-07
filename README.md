@@ -63,7 +63,38 @@ snakemake \
 ### Run with Nextflow
 
 ```bash
+# Basic run with default mode and Conda environment
+nextflow run main.nf -profile conda
 
+# Run with Docker
+nextflow run main.nf -profile docker
+
+# Run with Singularity/Apptainer
+nextflow run main.nf -profile singularity
+
+# Run locally without containers
+nextflow run main.nf -profile standard
+```
+
+#### Select workflow parameters (optional)
+
+```bash
+nextflow run main.nf \
+  -profile conda \
+  --mode mapper \
+  --input_reference data/reference.fasta \
+  --input_reads data/reads.fasta \
+  --output_mapping results/output.txt
+```
+
+Available modes:
+- mapper → run the read-mapping workflow
+- assembler → run the de-novo assembly workflow
+
+#### For usage help run:
+
+```bash
+nextflow run main.nf --help
 ```
 
 ## Mapper
@@ -129,8 +160,8 @@ The assembler uses a **hashmap-based k-mer approach** for de novo sequence assem
 
 This greedy, count-based approach allows building contigs efficiently while avoiding repetitive loops and ensuring that only significant k-mers contribute to assembly.
 
+You can run the assembler directly with:
 
-Usage
 ```bash
 ./assembly input_reads.fasta output_contigs.fasta
 ```
