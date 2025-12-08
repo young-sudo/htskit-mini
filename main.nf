@@ -49,7 +49,7 @@ process RUN_MAPPER {
     script:
     """
     mkdir -p \$(dirname "${params.output_mapping}")
-    python3 mapper.py ${pair[0]} ${pair[1]} ${params.output_mapping}
+    python3 mapper/mapper.py ${pair[0]} ${pair[1]} ${params.output_mapping}
     """
 }
 
@@ -66,7 +66,7 @@ process RUN_ASSEMBLER {
     script:
     """
     mkdir -p \$(dirname "${params.output_contigs}")
-    ./assembly ${reads} ${params.output_contigs}
+    assembler/assembly ${reads} ${params.output_contigs}
     """
 }
 
