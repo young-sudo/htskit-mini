@@ -106,7 +106,7 @@ nextflow run main.nf --help
 Implements a basic read mapping algorithm that aligns high-throughput sequencing reads to a given reference genome, generating alignment information for each read.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/young-sudo/htskit-mini/main/img/mapper.png" width=500>
+<img src="https://raw.githubusercontent.com/young-sudo/htskit-mini/main/img/mapper.png" width=500><br><small>Wei et al 2020</small>
 </p>
 
 ### Method
