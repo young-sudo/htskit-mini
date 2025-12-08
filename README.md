@@ -105,6 +105,10 @@ nextflow run main.nf --help
 
 Implements a basic read mapping algorithm that aligns high-throughput sequencing reads to a given reference genome, generating alignment information for each read.
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/young-sudo/htskit-mini/main/img/mapper.png">
+</p>
+
 ### Method
 
 The NGS mapper uses an **FM-index-based approach** for efficient sequence alignment. The key steps and components are as follows:
@@ -136,6 +140,10 @@ python3 mapper.py reference.fasta reads.fasta output.txt
 ## Assembler
 
 Performs de novo assembly of high-throughput sequencing reads into longer contiguous sequences (contigs), reconstructing the genome without requiring a reference.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/young-sudo/htskit-mini/main/img/assembler.png">
+</p>
 
 ### Method
 
