@@ -63,6 +63,25 @@ snakemake \
 
 ### Run with Nextflow
 
+#### Install Nextflow
+
+```bash
+# Download Nextflow
+curl -s https://get.nextflow.io | bash
+
+# Make Nextflow executable
+chmod +x nextflow
+
+# Move Nextflow into an executable path
+mkdir -p $HOME/.local/bin/
+mv nextflow $HOME/.local/bin/
+
+# Confirm Nextflow is installed correctly
+nextflow info
+```
+
+#### Basic run
+
 ```bash
 # Basic run with default mode and Conda environment
 nextflow run main.nf -profile conda
