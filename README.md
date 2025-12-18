@@ -12,7 +12,7 @@ Younginn Park
 ![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
 ![Slurm](https://img.shields.io/badge/Slurm-42A5F5?style=for-the-badge&logo=serverfault&logoColor=white)
 
-## Usage
+# Usage
 
 Clone the repository:
 
@@ -21,7 +21,7 @@ git clone https://github.com/young-sudo/htskit-mini.git
 cd htskit-mini
 ```
 
-### Run with Snakemake
+## Run with Snakemake
 
 To run the workflow **via Snakemake**, install it first (Conda recommended):
 
@@ -48,7 +48,7 @@ The `mode` parameter accepts two options: `mapper` or `assembler`
 
 Use parameter `--use-conda` to automatically create and use the Conda environment defined in the Snakefile or `env.yml` when running the workflow.
 
-#### (Optional) Define parameters
+### (Optional) Define parameters
 
 The default parameters are:
 
@@ -61,9 +61,9 @@ snakemake \
   output_mapping=results/output.txt
 ```
 
-### Run with Nextflow
+## Run with Nextflow
 
-#### Install Nextflow
+### Install Nextflow
 
 ```bash
 # Download Nextflow
@@ -80,7 +80,7 @@ mv nextflow $HOME/.local/bin/
 nextflow info
 ```
 
-#### Basic run
+### Basic run
 
 ```bash
 nextflow run main.nf \
@@ -102,7 +102,7 @@ Available profiles:
 - `standard` - run locally without containers
 - `slurm` - run with Slurm on HPC
 
-#### For usage help run:
+### For usage help run:
 
 ```bash
 nextflow run main.nf --help
