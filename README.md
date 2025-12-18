@@ -92,8 +92,8 @@ nextflow run main.nf \
 ```
 
 Available modes:
-- mapper → run the read-mapping workflow
-- assembler → run the de-novo assembly workflow
+- `mapper` → run the read-mapping workflow
+- `assembler` → run the de-novo assembly workflow
 
 Available profiles:
 - `conda` - basic run with default mode and Conda environment
