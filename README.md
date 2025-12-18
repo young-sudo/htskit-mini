@@ -83,25 +83,6 @@ nextflow info
 #### Basic run
 
 ```bash
-# Basic run with default mode and Conda environment
-nextflow run main.nf -profile conda
-
-# Run with Docker
-nextflow run main.nf -profile docker
-
-# Run with Singularity/Apptainer
-nextflow run main.nf -profile singularity
-
-# Run locally without containers
-nextflow run main.nf -profile standard
-
-# Run with Slurm on HPC
-nextflow run main.nf -profile slurm
-```
-
-#### Select workflow parameters (optional)
-
-```bash
 nextflow run main.nf \
   -profile conda \
   --mode mapper \
@@ -113,6 +94,13 @@ nextflow run main.nf \
 Available modes:
 - mapper → run the read-mapping workflow
 - assembler → run the de-novo assembly workflow
+
+Available profiles:
+- `conda` - basic run with default mode and Conda environment
+- `docker` - run with Docker
+- `singularity` - run with Singularity/Apptainer
+- `standard` - run locally without containers
+- `slurm` - run with Slurm on HPC
 
 #### For usage help run:
 
